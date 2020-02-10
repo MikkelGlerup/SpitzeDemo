@@ -18,7 +18,7 @@ namespace SpitzeAPI.Services
             _documents = database.GetCollection<Document>(settings.MongoCollectionName);
         }
         public List<Document> Get() =>
-            _documents.Find(book => true).ToList();
+            _documents.Find(document => true).ToList();
 
         public Document Get(string id) =>
             _documents.Find<Document>(document => document.Id == id).FirstOrDefault();

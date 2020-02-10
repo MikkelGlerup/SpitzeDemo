@@ -24,7 +24,7 @@ namespace SpitzeAPI.Controllers
         {
             return View();
         }
-        [HttpGet("{id:length(24)}", Name = "GetBook")]
+        [HttpGet("{id:length(24)}", Name = "GetDocument")]
         public ActionResult<Document> Get(string id)
         {
             var document = _mongoService.Get(id);
@@ -42,7 +42,7 @@ namespace SpitzeAPI.Controllers
         {
             _mongoService.Create(document);
 
-            return CreatedAtRoute("GetBook", new { id = document.Id.ToString() }, document);
+            return CreatedAtRoute("GetDocument", new { id = document.Id.ToString() }, document);
         }
 
         [HttpPut("{id:length(24)}")]
