@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Document } from "../../models/Document";
+
 
 @Component({
   selector: 'app-user-visits',
